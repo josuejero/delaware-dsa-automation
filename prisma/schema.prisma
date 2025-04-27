@@ -1,0 +1,86 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Member model for membership management
+model Member {
+  id          Int       @id @default(autoincrement())
+  email       String    @unique
+  name        String?
+  joinedAt    DateTime  @default(now())
+  status      String    // "current", "lapsed", "non-member", "pending"
+  discordId   String?   @unique
+  discordRole String?
+  duesExpiry  DateTime?
+  events      EventAttendee[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+// Event model for calendar & events pipeline
+model Event {
+  id              Int       @id @default(autoincrement())
+  title           String
+  description     String?
+  startTime       DateTime
+  endTime         DateTime
+  location        String?
+  actionNetworkId String?   @unique
+  googleCalendarId String?  @unique
+  discordEventId  String?   @unique
+  websiteEventId  String?   @unique
+  attendees       EventAttendee[]
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+}
+
+// Linking table for member attendance at events
+model EventAttendee {
+  id        Int       @id @default(autoincrement())
+  member    Member    @relation(fields: [memberId], references: [id])
+  memberId  Int
+  event     Event     @relation(fields: [eventId], references: [id])
+  eventId   Int
+  status    String    // "registered", "attended", "no-show", "canceled"
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  @@unique([memberId, eventId])
+}
+
+// Document model for document management
+model Document {
+  id              Int       @id @default(autoincrement())
+  title           String
+  driveFileId     String    @unique
+  driveParentId   String?
+  driveLink       String
+  documentType    String    // "agenda", "minutes", "resource", "archive"
+  lastEdited      DateTime
+  createdBy       String?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+}
+
+// Newsletter model for communications workflow
+model Newsletter {
+  id              Int       @id @default(autoincrement())
+  title           String
+  templateId      String?
+  content         String?   // JSON or HTML content
+  scheduledDate   DateTime?
+  sentDate        DateTime?
+  status          String    // "draft", "scheduled", "sent", "canceled"
+  openCount       Int?      @default(0)
+  clickCount      Int?      @default(0)
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+}
