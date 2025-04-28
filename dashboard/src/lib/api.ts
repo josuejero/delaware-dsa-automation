@@ -1,6 +1,6 @@
 import { getSession } from 'next-auth/react';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'\;
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
 
 class ApiService {
   private async getHeaders(): Promise<HeadersInit> {
@@ -27,7 +27,7 @@ class ApiService {
     return response.json() as Promise<T>;
   }
 
-  async post<T>(endpoint: string, data: any): Promise<T> {
+  async post<T>(endpoint: string, data: unknown): Promise<T> {
     const headers = await this.getHeaders();
     const response = await fetch(`${API_URL}${endpoint}`, {
       method: 'POST',
@@ -42,7 +42,7 @@ class ApiService {
     return response.json() as Promise<T>;
   }
 
-  async put<T>(endpoint: string, data: any): Promise<T> {
+  async put<T>(endpoint: string, data: unknown): Promise<T> {
     const headers = await this.getHeaders();
     const response = await fetch(`${API_URL}${endpoint}`, {
       method: 'PUT',

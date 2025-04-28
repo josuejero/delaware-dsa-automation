@@ -32,7 +32,6 @@ jest.mock('@prisma/client', () => {
         findMany: jest.fn().mockResolvedValue([]),
         count: jest.fn().mockResolvedValue(0),
       },
-      : jest.fn(),
     })),
   };
 });

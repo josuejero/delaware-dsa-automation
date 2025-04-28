@@ -1,0 +1,340 @@
+
+> delaware-dsa-automation@1.0.0 check
+> npm run lint && npm run type-check:api && npm run type-check:backend && npm run type-check:dashboard && npm run build:api && npm run build:backend && npm run build:dashboard && npm test
+
+
+> delaware-dsa-automation@1.0.0 lint
+> eslint .
+
+
+> delaware-dsa-automation@1.0.0 type-check:api
+> tsc --noEmit -p tsconfig.json
+
+backend/src/app.controller.ts(8,3): error TS1241: Unable to resolve signature of method decorator when called as an expression.
+  The runtime will invoke the decorator with 2 arguments, but the decorator expects 3.
+backend/src/app.controller.ts(8,4): error TS1270: Decorator function return type 'void | TypedPropertyDescriptor<unknown>' is not assignable to type 'void | (() => string)'.
+  Type 'TypedPropertyDescriptor<unknown>' is not assignable to type 'void | (() => string)'.
+backend/src/auth/auth.controller.ts(9,3): error TS1241: Unable to resolve signature of method decorator when called as an expression.
+  The runtime will invoke the decorator with 2 arguments, but the decorator expects 3.
+backend/src/auth/auth.controller.ts(9,4): error TS1270: Decorator function return type 'void | TypedPropertyDescriptor<unknown>' is not assignable to type 'void | ((loginDto: LoginDto) => Promise<{ access_token: string; user: { id: number; email: string; roles: string[]; }; }>)'.
+  Type 'TypedPropertyDescriptor<unknown>' is not assignable to type 'void | ((loginDto: LoginDto) => Promise<{ access_token: string; user: { id: number; email: string; roles: string[]; }; }>)'.
+backend/src/auth/auth.controller.ts(10,15): error TS1206: Decorators are not valid here.
+backend/src/auth/dto/login.dto.ts(4,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/auth/dto/login.dto.ts(5,3): error TS2564: Property 'email' has no initializer and is not definitely assigned in the constructor.
+backend/src/auth/dto/login.dto.ts(7,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/auth/dto/login.dto.ts(8,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/auth/dto/login.dto.ts(9,3): error TS2564: Property 'password' has no initializer and is not definitely assigned in the constructor.
+backend/src/events/dto/create-event.dto.ts(4,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/events/dto/create-event.dto.ts(5,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/events/dto/create-event.dto.ts(6,3): error TS2564: Property 'title' has no initializer and is not definitely assigned in the constructor.
+backend/src/events/dto/create-event.dto.ts(8,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/events/dto/create-event.dto.ts(9,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/events/dto/create-event.dto.ts(12,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/events/dto/create-event.dto.ts(13,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/events/dto/create-event.dto.ts(14,3): error TS2564: Property 'startTime' has no initializer and is not definitely assigned in the constructor.
+backend/src/events/dto/create-event.dto.ts(16,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/events/dto/create-event.dto.ts(17,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/events/dto/create-event.dto.ts(18,3): error TS2564: Property 'endTime' has no initializer and is not definitely assigned in the constructor.
+backend/src/events/dto/create-event.dto.ts(20,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/events/dto/create-event.dto.ts(21,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/events/dto/create-event.dto.ts(24,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/events/dto/create-event.dto.ts(25,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/events/dto/register-event.dto.ts(4,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/events/dto/register-event.dto.ts(5,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/events/dto/register-event.dto.ts(6,3): error TS2564: Property 'memberId' has no initializer and is not definitely assigned in the constructor.
+backend/src/events/events.controller.ts(10,3): error TS1241: Unable to resolve signature of method decorator when called as an expression.
+  The runtime will invoke the decorator with 2 arguments, but the decorator expects 3.
+backend/src/events/events.controller.ts(10,4): error TS1270: Decorator function return type 'void | TypedPropertyDescriptor<unknown>' is not assignable to type 'void | ((createEventDto: CreateEventDto) => Promise<{ id: number; createdAt: Date; updatedAt: Date; title: string; description: string | null; startTime: Date; ... 5 more ...; websiteEventId: string | null; }>)'.
+  Type 'TypedPropertyDescriptor<unknown>' is not assignable to type 'void | ((createEventDto: CreateEventDto) => Promise<{ id: number; createdAt: Date; updatedAt: Date; title: string; description: string | null; startTime: Date; ... 5 more ...; websiteEventId: string | null; }>)'.
+backend/src/events/events.controller.ts(11,16): error TS1206: Decorators are not valid here.
+backend/src/events/events.controller.ts(17,3): error TS1241: Unable to resolve signature of method decorator when called as an expression.
+  The runtime will invoke the decorator with 2 arguments, but the decorator expects 3.
+backend/src/events/events.controller.ts(17,4): error TS1270: Decorator function return type 'void | TypedPropertyDescriptor<unknown>' is not assignable to type 'void | ((upcoming: string) => Promise<{ id: number; createdAt: Date; updatedAt: Date; title: string; description: string | null; startTime: Date; endTime: Date; location: string | null; actionNetworkId: string | null; googleCalendarId: string | null; discordEventId: string | null; websiteEventId: string | null; }[]>)'.
+  Type 'TypedPropertyDescriptor<unknown>' is not assignable to type 'void | ((upcoming: string) => Promise<{ id: number; createdAt: Date; updatedAt: Date; title: string; description: string | null; startTime: Date; endTime: Date; location: string | null; actionNetworkId: string | null; googleCalendarId: string | null; discordEventId: string | null; websiteEventId: string | null; }[]>)'.
+backend/src/events/events.controller.ts(18,17): error TS1206: Decorators are not valid here.
+backend/src/events/events.controller.ts(25,3): error TS1241: Unable to resolve signature of method decorator when called as an expression.
+  The runtime will invoke the decorator with 2 arguments, but the decorator expects 3.
+backend/src/events/events.controller.ts(25,4): error TS1270: Decorator function return type 'void | TypedPropertyDescriptor<unknown>' is not assignable to type 'void | ((id: number) => Promise<{ id: number; createdAt: Date; updatedAt: Date; title: string; description: string | null; startTime: Date; endTime: Date; location: string | null; actionNetworkId: string | null; googleCalendarId: string | null; discordEventId: string | null; websiteEventId: string | null; }>)'.
+  Type 'TypedPropertyDescriptor<unknown>' is not assignable to type 'void | ((id: number) => Promise<{ id: number; createdAt: Date; updatedAt: Date; title: string; description: string | null; startTime: Date; endTime: Date; location: string | null; actionNetworkId: string | null; googleCalendarId: string | null; discordEventId: string | null; websiteEventId: string | null; }>)'.
+backend/src/events/events.controller.ts(26,17): error TS1206: Decorators are not valid here.
+backend/src/events/events.controller.ts(34,3): error TS1241: Unable to resolve signature of method decorator when called as an expression.
+  The runtime will invoke the decorator with 2 arguments, but the decorator expects 3.
+backend/src/events/events.controller.ts(34,4): error TS1270: Decorator function return type 'void | TypedPropertyDescriptor<unknown>' is not assignable to type 'void | ((id: number, registerEventDto: RegisterEventDto) => Promise<{ status: string; id: number; createdAt: Date; updatedAt: Date; memberId: number; eventId: number; }>)'.
+  Type 'TypedPropertyDescriptor<unknown>' is not assignable to type 'void | ((id: number, registerEventDto: RegisterEventDto) => Promise<{ status: string; id: number; createdAt: Date; updatedAt: Date; memberId: number; eventId: number; }>)'.
+backend/src/events/events.controller.ts(36,5): error TS1206: Decorators are not valid here.
+backend/src/events/events.controller.ts(37,5): error TS1206: Decorators are not valid here.
+backend/src/membership/dto/create-member.dto.ts(4,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/membership/dto/create-member.dto.ts(5,3): error TS2564: Property 'email' has no initializer and is not definitely assigned in the constructor.
+backend/src/membership/dto/create-member.dto.ts(7,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/membership/dto/create-member.dto.ts(8,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/membership/dto/create-member.dto.ts(11,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/membership/dto/create-member.dto.ts(12,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/membership/dto/update-member-status.dto.ts(4,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/membership/dto/update-member-status.dto.ts(5,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/membership/dto/update-member-status.dto.ts(6,3): error TS2564: Property 'status' has no initializer and is not definitely assigned in the constructor.
+backend/src/membership/membership.controller.ts(10,3): error TS1241: Unable to resolve signature of method decorator when called as an expression.
+  The runtime will invoke the decorator with 2 arguments, but the decorator expects 3.
+backend/src/membership/membership.controller.ts(10,4): error TS1270: Decorator function return type 'void | TypedPropertyDescriptor<unknown>' is not assignable to type 'void | ((createMemberDto: CreateMemberDto) => Promise<{ email: string; name: string | null; discordId: string | null; status: string; id: number; joinedAt: Date; discordRole: string | null; duesExpiry: Date | null; createdAt: Date; updatedAt: Date; }>)'.
+  Type 'TypedPropertyDescriptor<unknown>' is not assignable to type 'void | ((createMemberDto: CreateMemberDto) => Promise<{ email: string; name: string | null; discordId: string | null; status: string; id: number; joinedAt: Date; discordRole: string | null; duesExpiry: Date | null; createdAt: Date; updatedAt: Date; }>)'.
+backend/src/membership/membership.controller.ts(11,16): error TS1206: Decorators are not valid here.
+backend/src/membership/membership.controller.ts(15,3): error TS1241: Unable to resolve signature of method decorator when called as an expression.
+  The runtime will invoke the decorator with 2 arguments, but the decorator expects 3.
+backend/src/membership/membership.controller.ts(15,4): error TS1270: Decorator function return type 'void | TypedPropertyDescriptor<unknown>' is not assignable to type 'void | ((page?: string, limit?: string) => Promise<{ items: { email: string; name: string | null; discordId: string | null; status: string; id: number; joinedAt: Date; discordRole: string | null; duesExpiry: Date | null; createdAt: Date; updatedAt: Date; }[]; total: number; }>)'.
+  Type 'TypedPropertyDescriptor<unknown>' is not assignable to type 'void | ((page?: string, limit?: string) => Promise<{ items: { email: string; name: string | null; discordId: string | null; status: string; id: number; joinedAt: Date; discordRole: string | null; duesExpiry: Date | null; createdAt: Date; updatedAt: Date; }[]; total: number; }>)'.
+backend/src/membership/membership.controller.ts(17,5): error TS1206: Decorators are not valid here.
+backend/src/membership/membership.controller.ts(18,5): error TS1206: Decorators are not valid here.
+backend/src/membership/membership.controller.ts(23,3): error TS1241: Unable to resolve signature of method decorator when called as an expression.
+  The runtime will invoke the decorator with 2 arguments, but the decorator expects 3.
+backend/src/membership/membership.controller.ts(23,4): error TS1270: Decorator function return type 'void | TypedPropertyDescriptor<unknown>' is not assignable to type 'void | ((id: number) => Promise<{ email: string; name: string | null; discordId: string | null; status: string; id: number; joinedAt: Date; discordRole: string | null; duesExpiry: Date | null; createdAt: Date; updatedAt: Date; }>)'.
+  Type 'TypedPropertyDescriptor<unknown>' is not assignable to type 'void | ((id: number) => Promise<{ email: string; name: string | null; discordId: string | null; status: string; id: number; joinedAt: Date; discordRole: string | null; duesExpiry: Date | null; createdAt: Date; updatedAt: Date; }>)'.
+backend/src/membership/membership.controller.ts(24,17): error TS1206: Decorators are not valid here.
+backend/src/membership/membership.controller.ts(32,3): error TS1241: Unable to resolve signature of method decorator when called as an expression.
+  The runtime will invoke the decorator with 2 arguments, but the decorator expects 3.
+backend/src/membership/membership.controller.ts(32,4): error TS1270: Decorator function return type 'void | TypedPropertyDescriptor<unknown>' is not assignable to type 'void | ((id: number, updateMemberStatusDto: UpdateMemberStatusDto) => Promise<{ email: string; name: string | null; discordId: string | null; status: string; id: number; ... 4 more ...; updatedAt: Date; }>)'.
+  Type 'TypedPropertyDescriptor<unknown>' is not assignable to type 'void | ((id: number, updateMemberStatusDto: UpdateMemberStatusDto) => Promise<{ email: string; name: string | null; discordId: string | null; status: string; id: number; ... 4 more ...; updatedAt: Date; }>)'.
+backend/src/membership/membership.controller.ts(34,5): error TS1206: Decorators are not valid here.
+backend/src/membership/membership.controller.ts(35,5): error TS1206: Decorators are not valid here.
+backend/src/membership/membership.controller.ts(40,3): error TS1241: Unable to resolve signature of method decorator when called as an expression.
+  The runtime will invoke the decorator with 2 arguments, but the decorator expects 3.
+backend/src/membership/membership.controller.ts(40,4): error TS1270: Decorator function return type 'void | TypedPropertyDescriptor<unknown>' is not assignable to type 'void | ((days?: string) => Promise<{ email: string; name: string | null; discordId: string | null; status: string; id: number; joinedAt: Date; discordRole: string | null; duesExpiry: Date | null; createdAt: Date; updatedAt: Date; }[]>)'.
+  Type 'TypedPropertyDescriptor<unknown>' is not assignable to type 'void | ((days?: string) => Promise<{ email: string; name: string | null; discordId: string | null; status: string; id: number; joinedAt: Date; discordRole: string | null; duesExpiry: Date | null; createdAt: Date; updatedAt: Date; }[]>)'.
+backend/src/membership/membership.controller.ts(41,30): error TS1206: Decorators are not valid here.
+backend/src/webhooks/dto/action-network-webhook.dto.ts(5,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/webhooks/dto/action-network-webhook.dto.ts(6,3): error TS2564: Property 'email_address' has no initializer and is not definitely assigned in the constructor.
+backend/src/webhooks/dto/action-network-webhook.dto.ts(8,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/webhooks/dto/action-network-webhook.dto.ts(9,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/webhooks/dto/action-network-webhook.dto.ts(12,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/webhooks/dto/action-network-webhook.dto.ts(13,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/webhooks/dto/action-network-webhook.dto.ts(16,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/webhooks/dto/action-network-webhook.dto.ts(17,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/webhooks/dto/action-network-webhook.dto.ts(22,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/webhooks/dto/action-network-webhook.dto.ts(23,3): error TS2564: Property 'title' has no initializer and is not definitely assigned in the constructor.
+backend/src/webhooks/dto/action-network-webhook.dto.ts(25,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/webhooks/dto/action-network-webhook.dto.ts(26,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/webhooks/dto/action-network-webhook.dto.ts(29,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/webhooks/dto/action-network-webhook.dto.ts(30,3): error TS2564: Property 'start_date' has no initializer and is not definitely assigned in the constructor.
+backend/src/webhooks/dto/action-network-webhook.dto.ts(32,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/webhooks/dto/action-network-webhook.dto.ts(33,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/webhooks/dto/action-network-webhook.dto.ts(36,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/webhooks/dto/action-network-webhook.dto.ts(37,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/webhooks/dto/action-network-webhook.dto.ts(40,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/webhooks/dto/action-network-webhook.dto.ts(41,3): error TS2564: Property 'identifiers' has no initializer and is not definitely assigned in the constructor.
+backend/src/webhooks/dto/action-network-webhook.dto.ts(45,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/webhooks/dto/action-network-webhook.dto.ts(46,3): error TS2564: Property 'action' has no initializer and is not definitely assigned in the constructor.
+backend/src/webhooks/dto/action-network-webhook.dto.ts(48,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/webhooks/dto/action-network-webhook.dto.ts(49,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/webhooks/dto/action-network-webhook.dto.ts(50,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/webhooks/dto/action-network-webhook.dto.ts(53,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/webhooks/dto/action-network-webhook.dto.ts(54,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/webhooks/dto/action-network-webhook.dto.ts(55,4): error TS1240: Unable to resolve signature of property decorator when called as an expression.
+  Argument of type 'undefined' is not assignable to parameter of type 'Object'.
+backend/src/webhooks/webhooks.controller.ts(9,3): error TS1241: Unable to resolve signature of method decorator when called as an expression.
+  The runtime will invoke the decorator with 2 arguments, but the decorator expects 3.
+backend/src/webhooks/webhooks.controller.ts(9,4): error TS1270: Decorator function return type 'void | TypedPropertyDescriptor<unknown>' is not assignable to type 'void | ((signature: string | undefined, payload: ActionNetworkWebhookDto) => Promise<{ received: boolean; }>)'.
+  Type 'TypedPropertyDescriptor<unknown>' is not assignable to type 'void | ((signature: string | undefined, payload: ActionNetworkWebhookDto) => Promise<{ received: boolean; }>)'.
+backend/src/webhooks/webhooks.controller.ts(10,3): error TS1241: Unable to resolve signature of method decorator when called as an expression.
+  The runtime will invoke the decorator with 2 arguments, but the decorator expects 3.
+backend/src/webhooks/webhooks.controller.ts(10,4): error TS1270: Decorator function return type 'void | TypedPropertyDescriptor<unknown>' is not assignable to type 'void | ((signature: string | undefined, payload: ActionNetworkWebhookDto) => Promise<{ received: boolean; }>)'.
+  Type 'TypedPropertyDescriptor<unknown>' is not assignable to type 'void | ((signature: string | undefined, payload: ActionNetworkWebhookDto) => Promise<{ received: boolean; }>)'.
+backend/src/webhooks/webhooks.controller.ts(12,5): error TS1206: Decorators are not valid here.
+backend/src/webhooks/webhooks.controller.ts(13,5): error TS1206: Decorators are not valid here.
+backend/src/webhooks/webhooks.service.ts(33,53): error TS18046: 'error' is of type 'unknown'.
+backend/src/webhooks/webhooks.service.ts(34,9): error TS18046: 'error' is of type 'unknown'.
+backend/test/app.e2e-spec.ts(20,12): error TS2349: This expression is not callable.
+  Type '{ default: SuperTestStatic; Test: typeof Test; agent: typeof TestAgent & ((app?: App | undefined, options?: AgentOptions | undefined) => TestAgent<...>); }' has no call signatures.
+dashboard/src/app/dashboard/page.tsx(6,29): error TS2307: Cannot find module '@/components/layout/DashboardLayout' or its corresponding type declarations.
+dashboard/src/app/dashboard/page.tsx(7,46): error TS2307: Cannot find module '@/lib/api' or its corresponding type declarations.
+dashboard/src/app/dashboard/page.tsx(8,29): error TS2307: Cannot find module '@/lib/store' or its corresponding type declarations.
+dashboard/src/app/dashboard/page.tsx(52,63): error TS7006: Parameter 'm' implicitly has an 'any' type.
+dashboard/src/app/dashboard/page.tsx(78,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/dashboard/page.tsx(79,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/dashboard/page.tsx(80,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/dashboard/page.tsx(81,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/dashboard/page.tsx(89,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/dashboard/page.tsx(90,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/dashboard/page.tsx(91,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/dashboard/page.tsx(92,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/dashboard/page.tsx(93,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/dashboard/page.tsx(96,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/dashboard/page.tsx(97,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/dashboard/page.tsx(98,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/dashboard/page.tsx(101,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/dashboard/page.tsx(102,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/dashboard/page.tsx(103,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/dashboard/page.tsx(107,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/dashboard/page.tsx(108,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/dashboard/page.tsx(109,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/dashboard/page.tsx(110,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/dashboard/page.tsx(119,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/dashboard/page.tsx(121,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/dashboard/page.tsx(122,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/dashboard/page.tsx(123,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/dashboard/page.tsx(127,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/dashboard/page.tsx(133,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/events/page.tsx(4,29): error TS2307: Cannot find module '@/components/layout/DashboardLayout' or its corresponding type declarations.
+dashboard/src/app/events/page.tsx(5,34): error TS2307: Cannot find module '@/lib/api' or its corresponding type declarations.
+dashboard/src/app/events/page.tsx(6,29): error TS2307: Cannot find module '@/lib/store' or its corresponding type declarations.
+dashboard/src/app/events/page.tsx(35,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/events/page.tsx(36,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/events/page.tsx(37,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/events/page.tsx(38,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/events/page.tsx(41,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/events/page.tsx(42,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/events/page.tsx(43,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/events/page.tsx(49,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/events/page.tsx(59,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/events/page.tsx(63,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/events/page.tsx(67,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/events/page.tsx(69,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/events/page.tsx(70,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/events/page.tsx(72,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/events/page.tsx(73,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/events/page.tsx(74,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/events/page.tsx(76,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/events/page.tsx(77,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/events/page.tsx(81,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/events/page.tsx(82,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/events/page.tsx(88,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/events/page.tsx(91,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/events/page.tsx(92,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/layout.tsx(15,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/layout.tsx(16,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/members/page.tsx(4,29): error TS2307: Cannot find module '@/components/layout/DashboardLayout' or its corresponding type declarations.
+dashboard/src/app/members/page.tsx(5,36): error TS2307: Cannot find module '@/lib/api' or its corresponding type declarations.
+dashboard/src/app/members/page.tsx(6,29): error TS2307: Cannot find module '@/lib/store' or its corresponding type declarations.
+dashboard/src/app/members/page.tsx(53,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/members/page.tsx(54,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/members/page.tsx(55,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/members/page.tsx(56,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/members/page.tsx(59,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/members/page.tsx(60,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/members/page.tsx(61,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/members/page.tsx(62,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/members/page.tsx(63,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/members/page.tsx(64,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/members/page.tsx(67,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/members/page.tsx(70,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/members/page.tsx(73,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/members/page.tsx(76,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/members/page.tsx(81,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/members/page.tsx(83,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/members/page.tsx(84,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/members/page.tsx(89,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/members/page.tsx(90,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/members/page.tsx(96,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/members/page.tsx(97,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/members/page.tsx(100,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/members/page.tsx(103,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/members/page.tsx(104,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/members/page.tsx(108,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/members/page.tsx(111,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/members/page.tsx(112,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/members/page.tsx(124,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/members/page.tsx(125,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/members/page.tsx(128,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/members/page.tsx(129,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/members/page.tsx(136,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/settings/page.tsx(3,29): error TS2307: Cannot find module '@/components/layout/DashboardLayout' or its corresponding type declarations.
+dashboard/src/app/settings/page.tsx(10,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/settings/page.tsx(11,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/settings/page.tsx(12,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/settings/page.tsx(13,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/settings/page.tsx(16,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/settings/page.tsx(17,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/settings/page.tsx(19,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/settings/page.tsx(20,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/settings/page.tsx(21,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/settings/page.tsx(22,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/settings/page.tsx(27,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/settings/page.tsx(28,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/settings/page.tsx(29,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/settings/page.tsx(36,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/settings/page.tsx(37,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/settings/page.tsx(39,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/settings/page.tsx(40,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/settings/page.tsx(41,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/settings/page.tsx(44,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/settings/page.tsx(45,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/settings/page.tsx(51,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/settings/page.tsx(57,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/settings/page.tsx(58,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/settings/page.tsx(61,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/settings/page.tsx(65,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/settings/page.tsx(66,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/app/settings/page.tsx(67,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/components/layout/DashboardLayout.tsx(6,29): error TS2307: Cannot find module '@/lib/store' or its corresponding type declarations.
+dashboard/src/components/layout/DashboardLayout.tsx(7,27): error TS6142: Module './Notifications' was resolved to '/Users/wholesway/Documents/Programming/Projects/delaware-dsa-automation/dashboard/src/components/layout/Notifications.tsx', but '--jsx' is not set.
+dashboard/src/components/layout/DashboardLayout.tsx(16,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/components/layout/DashboardLayout.tsx(33,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/components/layout/DashboardLayout.tsx(35,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/components/layout/DashboardLayout.tsx(36,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/components/layout/DashboardLayout.tsx(37,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/components/layout/DashboardLayout.tsx(38,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/components/layout/DashboardLayout.tsx(41,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/components/layout/DashboardLayout.tsx(42,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/components/layout/DashboardLayout.tsx(43,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/components/layout/DashboardLayout.tsx(44,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/components/layout/DashboardLayout.tsx(45,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/components/layout/DashboardLayout.tsx(48,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/components/layout/DashboardLayout.tsx(50,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/components/layout/DashboardLayout.tsx(51,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/components/layout/DashboardLayout.tsx(52,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/components/layout/DashboardLayout.tsx(64,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/components/layout/DashboardLayout.tsx(66,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/components/layout/DashboardLayout.tsx(67,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/components/layout/DashboardLayout.tsx(73,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/components/layout/DashboardLayout.tsx(79,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/components/layout/Notifications.tsx(4,29): error TS2307: Cannot find module '@/lib/store' or its corresponding type declarations.
+dashboard/src/components/layout/Notifications.tsx(11,39): error TS7006: Parameter 'notification' implicitly has an 'any' type.
+dashboard/src/components/layout/Notifications.tsx(25,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/components/layout/Notifications.tsx(26,27): error TS7006: Parameter 'notification' implicitly has an 'any' type.
+dashboard/src/components/layout/Notifications.tsx(27,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/components/layout/Notifications.tsx(36,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/components/layout/Notifications.tsx(37,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+dashboard/src/components/layout/Notifications.tsx(38,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.

@@ -38,6 +38,7 @@
     "@types/node": "^22.15.2",
     "@typescript-eslint/eslint-plugin": "^8.31.0",
     "@typescript-eslint/parser": "^8.31.0",
+    "globals": "^16.0.0",
     "jest": "^29.7.0",
     "prisma": "^6.6.0",
     "ts-jest": "^29.3.2",
@@ -47,6 +48,5 @@
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
-  },
-  "type": "module"
+  }
 }

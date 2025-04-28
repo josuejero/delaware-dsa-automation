@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import DashboardLayout from '@/components/layout/DashboardLayout';
-import { membersApi, eventsApi, Member, Event } from '@/lib/api';
+import { membersApi, eventsApi, Event } from '@/lib/api';
 import { useAppStore } from '@/lib/store';
 
 export default function Dashboard() {
