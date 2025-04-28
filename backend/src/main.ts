@@ -1,5 +1,8 @@
 import { NestFactory } from '@nestjs/core';
-import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
+import {
+  FastifyAdapter,
+  NestFastifyApplication,
+} from '@nestjs/platform-fastify';
 import { ValidationPipe, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { AppModule } from './app.module';
@@ -11,14 +14,13 @@ async function bootstrap() {
     AppModule,
     new FastifyAdapter(),
   );
-  
   const configService = app.get(ConfigService);
-  const port = configService.get('port');
+  const port = configService.get<number>('port') ?? 3000;
   const logger = new Logger('Bootstrap');
 
   // Global middleware
   app.enableCors();
-  
+
   // Global pipes
   app.useGlobalPipes(
     new ValidationPipe({
@@ -27,10 +29,10 @@ async function bootstrap() {
       forbidNonWhitelisted: true,
     }),
   );
-  
+
   // Global filters
   app.useGlobalFilters(new HttpExceptionFilter());
-  
+
   // Global interceptors
   app.useGlobalInterceptors(new LoggingInterceptor());
 
@@ -38,4 +40,7 @@ async function bootstrap() {
   logger.log(`Application is running on: ${await app.getUrl()}`);
 }
 
-bootstrap();
+bootstrap().catch((err) => {
+  console.error('Failed to start application:', err);
+  process.exit(1);
+});
